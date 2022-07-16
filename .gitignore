@@ -1,0 +1,6 @@
+__pycache__
+__pycache_/*
+*.pyc
+__pycache__/
+*.db
+logs/*.txt
