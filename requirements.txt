@@ -2,3 +2,4 @@ gspread
 sqlalchemy
 pysolar
 pytest
+adafruit-circuitpython-bh1750
