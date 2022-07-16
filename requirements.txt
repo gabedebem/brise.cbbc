@@ -1,0 +1,4 @@
+gspread
+sqlalchemy
+pysolar
+pytest
