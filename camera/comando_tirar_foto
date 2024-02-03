@@ -1,0 +1,8 @@
+#Abrir a pasta imagens
+
+cd brise.cbb/images
+
+
+#Digitar:
+
+raspistill -o image.jpg

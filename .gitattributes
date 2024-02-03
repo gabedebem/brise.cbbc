@@ -1,0 +1,4 @@
+*.pdf -delta
+*.jpg -delta
+*.log -delta
+*.db -delta

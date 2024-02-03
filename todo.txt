@@ -1,0 +1,24 @@
+### TODO
+
+    Colocar log nos calculos
+    revisar testes
+    refatorar calculos - sombreamento
+    TEstes de calculos - sombreamento
+
+### Doing
+    Salvar dados nuvem
+
+
+### Done
+    salvar tudo no main
+    calcular tudo e salvar no bd
+    no main, ler pelo BD
+    Logs
+    ler tudo no main
+    ler, calcular e salvar no leitura_agendada
+    querie otimizada
+    usar sempre o tout sem tabela auxiliar
+    TEstes de calculos - neutral, TO, 
+    Gerar bd de testes
+    Usar pony
+    criar db

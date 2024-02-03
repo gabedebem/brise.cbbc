@@ -1,0 +1,1 @@
+ALTER TABLE Brise DROP COLUMN pwm_servo;

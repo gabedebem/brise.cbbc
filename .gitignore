@@ -1,0 +1,9 @@
+__pycache__
+__pycache_/*
+*.pyc
+__pycache__/
+logs/*.txt
+.pytest_cache
+.vscode/
+local_config.py
+logs/*

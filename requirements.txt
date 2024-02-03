@@ -1,0 +1,6 @@
+gspread
+pysolar
+pytest
+pony
+adafruit-circuitpython-bh1750
+board
