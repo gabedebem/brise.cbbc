@@ -2,8 +2,8 @@
 cd ~/brise.cbbc
 git rm --cache db/brise.db
 git rm --cache logs/logs_sistema.log
-
-
+python3 git-filter-repo.py --invert-paths --path 'db/brise.db' --force
+python3 git-filter-repo.py --invert-paths --path 'logs/logs_sistema.log' --force
 git add db/brise.db
 git add logs/logs_sistema.log
 timestamp() {
