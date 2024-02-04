@@ -4,5 +4,6 @@ git add --all
 timestamp() {
   date +"at %H:%M:%S on %d/%m/%Y"
 }
-git commit --amend m "Regular auto-commit $(timestamp)"
+# git commit -am "Regular auto-commit $(timestamp)"
+git commit --amend
 git push --force-with-lease
