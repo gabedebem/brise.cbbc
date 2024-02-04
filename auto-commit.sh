@@ -1,8 +1,10 @@
 #!/bin/sh
 cd ~/brise.cbbc
 git rm --cache db/brise.db
+git rm --cache logs/logs_sistema.log
 git gc
 git add db/brise.db
+git add logs/logs_sistema.log
 timestamp() {
   date +"at %H:%M:%S on %d/%m/%Y"
 }
