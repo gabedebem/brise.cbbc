@@ -46,3 +46,7 @@ Habilite e execute:
 ## Inserir auto-commit na crontab
 
     00 01,13 * * * bash ~/auto-commit.sh
+
+## Instal git-filter-repo
+
+    python3 -m pip install --user git-filter-repo
