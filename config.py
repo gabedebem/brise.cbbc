@@ -9,7 +9,7 @@ MIN_LUX = 100
 MAX_LUX = 2000
 MIN_ANGLE = -70
 MAX_ANGLE = 70
-# limites fisicos do BRISE
+# limites fisicos do BRISEgit
 MIN_TETA_FISICO = -60
 MAX_TETA_FISICO = 60
 # Localizacao, TimeZone de Curitiba e orientacao da camara
