@@ -1,6 +1,6 @@
 #!/bin/sh
 cd ~/brise.cbbc
-git add --all
+git add db/brise.db
 timestamp() {
   date +"at %H:%M:%S on %d/%m/%Y"
 }
