@@ -6,4 +6,3 @@ logs/*.txt
 .pytest_cache
 .vscode/
 local_config.py
-logs/*
