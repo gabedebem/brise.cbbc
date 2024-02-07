@@ -34,7 +34,10 @@ def main():
     log.debug(f'Calculos -> alt={altitude}; az={azimute}; vsa={vsa}; to={to}; tn={tn}')
 
     lux = ler_lux()
-    teta_inicial = brise.teta_fisico or 0
+    if brise.teta_fisico:
+        teta_inicial = brise.teta_fisico
+    else:
+        teta_inicial = 0
     sombreamento_anterior = brise.sombreamento
     sombreamento, teta = calculos.calcular_sombreamento_teta(
         e_table=lux.get('e_table'),
