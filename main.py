@@ -93,6 +93,16 @@ def main():
             config.CALIBRAR = False
 
 if __name__ == '__main__':
+    # Insere brise na posicao anterior
+    rele.calibrar()
+    db = define_entidades(provider='sqlite', filename='brise.db')
+    Brise = db.Brise
+    with orm.db_session:
+        brise = Brise.ultimo_registro()
+    log.debug(f'Insere na posicao anterior ({brise.teta_fisico})')
+    rele.girar(0, brise.teta_fisico)
+
+    # Loop principal
     try:
         while True:
             log.info('Executando main...')
