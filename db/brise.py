@@ -23,13 +23,13 @@ def define_entidades(**db_params) -> 'Brise':
         to = orm.Optional(float)
         e_table_inf = orm.Optional(float)
         e_table_sup = orm.Optional(float)
-        e_table = orm.Optional(float)
-        e_eye = orm.Optional(float)
+        e_table = orm.Optional(float, default=0)
+        e_eye = orm.Optional(float,  default=0)
         altitude = orm.Optional(float)
         azimute =  orm.Optional(float)
         vsa =  orm.Optional(float)
-        teta = orm.Optional(float)
-        teta_fisico = orm.Optional(float)
+        teta = orm.Optional(float, default=0)
+        teta_fisico = orm.Optional(float, default=0)
         sombreamento = orm.Optional(int, default=0)
 
 
