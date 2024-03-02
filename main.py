@@ -99,8 +99,10 @@ if __name__ == '__main__':
     Brise = db.Brise
     with orm.db_session:
         brise = Brise.ultimo_registro()
-    log.debug(f'Insere na posicao anterior ({brise.teta_fisico})')
-    rele.girar(0, brise.teta_fisico)
+
+    if brise.teta_fisico:
+        log.debug(f'Insere na posicao anterior ({brise.teta_fisico})')
+        rele.girar(0, brise.teta_fisico)
 
     # Loop principal
     try:
