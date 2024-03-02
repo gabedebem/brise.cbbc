@@ -81,16 +81,17 @@ def main():
         photos.condicoes(brise, sombreamento_anterior)
 
     ## Girar brise
-    agora = datetime.now().time()
-    if (config.HORA_INICIO <= agora <= config.HORA_FIM) and config.FUNCIONAR_BRISE:
-        rele.girar(teta_inicial, teta_fisico)
-        config.CALIBRAR = True
-    else:
-        log.debug('Fora do horário de funcionamento.')
-        if config.CALIBRAR and config.FUNCIONAR_BRISE:
-            rele.calibrar()
-            log.debug('Calibrando...')
-            config.CALIBRAR = False
+    if config.FUNCIONAR_BRISE:
+        agora = datetime.now().time()
+        if (config.HORA_INICIO <= agora <= config.HORA_FIM):
+            rele.girar(teta_inicial, teta_fisico)
+            config.CALIBRAR = True
+        else:
+            log.debug('Fora do horário de funcionamento.')
+            if config.CALIBRAR:
+                rele.calibrar()
+                log.debug('Calibrando...')
+                config.CALIBRAR = False
 
 if __name__ == '__main__':
     # Insere brise na posicao anterior
