@@ -1,6 +1,9 @@
 from datetime import datetime, timezone, timedelta
 from local_config import *
 
+# Funcionar brise (True) apenas coletar dados (False)
+FUNCIONAR_BRISE = False
+
 ## Constantes
 FORCAR_REGRA_DIFUSA = False
 # Aprox 6s de delay

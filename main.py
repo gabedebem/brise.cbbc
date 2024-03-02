@@ -82,25 +82,26 @@ def main():
 
     ## Girar brise
     agora = datetime.now().time()
-    if config.HORA_INICIO <= agora <= config.HORA_FIM:
+    if (config.HORA_INICIO <= agora <= config.HORA_FIM) and config.FUNCIONAR_BRISE:
         rele.girar(teta_inicial, teta_fisico)
         config.CALIBRAR = True
     else:
         log.debug('Fora do horário de funcionamento.')
-        if config.CALIBRAR:
+        if config.CALIBRAR and config.FUNCIONAR_BRISE:
             rele.calibrar()
             log.debug('Calibrando...')
             config.CALIBRAR = False
 
 if __name__ == '__main__':
     # Insere brise na posicao anterior
-    rele.calibrar()
+    if config.FUNCIONAR_BRISE:
+        rele.calibrar()
     db = define_entidades(provider='sqlite', filename='brise.db')
     Brise = db.Brise
     with orm.db_session:
         brise = Brise.ultimo_registro()
 
-    if brise.teta_fisico:
+    if config.FUNCIONAR_BRISE and brise.teta_fisico:
         log.debug(f'Insere na posicao anterior ({brise.teta_fisico})')
         rele.girar(0, brise.teta_fisico)
 
