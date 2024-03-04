@@ -2,12 +2,12 @@ from datetime import datetime, timezone, timedelta
 from local_config import *
 
 # Funcionar brise (True) apenas coletar dados (False)
-FUNCIONAR_BRISE = False
+FUNCIONAR_BRISE = True
 
 ## Constantes
 FORCAR_REGRA_DIFUSA = False
 # Aprox 6s de delay
-TEMPO_ESPERA = 100
+TEMPO_ESPERA = 595
 MIN_LUX = 100
 MAX_LUX = 2000
 MIN_ANGLE = -70
