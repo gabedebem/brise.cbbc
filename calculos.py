@@ -41,6 +41,9 @@ def calcular_sombreamento_teta(e_table, vsa, to, tn, coordenadas_solares, sombre
     agora = datetime.now().time()
     # Horario de funcionamento
     if config.HORA_INICIO <= agora <= config.HORA_FIM:
+        if lux > config.MAX_LUX and sombreamento == 100:
+            teta = 60
+            return (sombreamento, teta)
         if to < tn - 2.5:  # Condicao 1 (sombreamento = 0%)
             log.debug('Condicao 1')
             if lux <= config.MAX_LUX and sombreamento == 0:
