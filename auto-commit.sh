@@ -4,8 +4,6 @@ git rm --cache db/brise.db
 git gc
 #git add db/brise.db
 git add -A
-# git add db/brise.db
-git add -A
 timestamp() {
   date +"at %H:%M:%S on %d/%m/%Y"
 }
