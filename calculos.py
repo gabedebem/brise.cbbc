@@ -41,6 +41,9 @@ def calcular_sombreamento_teta(e_table, vsa, to, tn, coordenadas_solares, sombre
     agora = datetime.now().time()
     # Horario de funcionamento
     if config.HORA_INICIO <= agora <= config.HORA_FIM:
+        if lux > config.MAX_LUX and sombreamento == 100:
+            teta = 60
+            return (sombreamento, teta)
         if to < tn - 2.5:  # Condicao 1 (sombreamento = 0%)
             log.debug('Condicao 1')
             if lux <= config.MAX_LUX and sombreamento == 0:
@@ -57,7 +60,7 @@ def calcular_sombreamento_teta(e_table, vsa, to, tn, coordenadas_solares, sombre
                 sombreamento = 100
             elif lux < config.MIN_LUX and sombreamento == 100:
                 sombreamento = 50
-        elif tn - 2.5 <= to <= tn + 2.5:  # Condicao 2 (sombreamento =  50%)
+        elif tn - 2.5 <= to < tn:  # Condicao 2 (sombreamento =  50%)
             log.debug('Condicao 2')
             if sombreamento <= 50 and lux <= config.MAX_LUX:
                 sombreamento = 50
@@ -67,10 +70,16 @@ def calcular_sombreamento_teta(e_table, vsa, to, tn, coordenadas_solares, sombre
                 sombreamento = 100
             elif sombreamento == 100 and lux < config.MIN_LUX:
                 sombreamento = 50
-        elif to > tn + 2.5:  # Condicao 3
+        elif tn <= to < + 2.5:  # Condicao 3
             log.debug('Condicao 3')
             sombreamento = 100
+        elif to >= tn + 2.5:    # Condicao 4
+            log.debug('Condicao 4')
+            teta = 60
+            sombreamento = 200
+            return (sombreamento, teta)
 
+        ######
         # Condicao de radiacao direta e radiacao difusa
         if 0 <= vsa <= 60 and not(config.FORCAR_REGRA_DIFUSA):
             log.debug(f'radiacao direta (vsa={vsa})')
