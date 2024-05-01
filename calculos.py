@@ -70,7 +70,7 @@ def calcular_sombreamento_teta(e_table, vsa, to, tn, coordenadas_solares, sombre
                 sombreamento = 100
             elif sombreamento == 100 and lux < config.MIN_LUX:
                 sombreamento = 50
-        elif tn <= to < + 2.5:  # Condicao 3
+        elif tn <= to < tn + 2.5:  # Condicao 3
             log.debug('Condicao 3')
             sombreamento = 100
         elif to >= tn + 2.5:    # Condicao 4
