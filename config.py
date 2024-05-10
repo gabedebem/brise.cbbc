@@ -19,7 +19,7 @@ MAX_TETA_FISICO = 60
 LAT = -25.4429402
 LONG = -49.3539662
 TIMEZONE = timezone(timedelta(hours=-3))
-ORI = 45
+ORI = 0
 HORA_INICIO = datetime.strptime('07:00:00', "%H:%M:%S").time()
 HORA_FIM = datetime.strptime('18:00:00', "%H:%M:%S").time()
 # Se precisa calibrar o brise
